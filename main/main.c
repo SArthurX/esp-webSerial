@@ -49,7 +49,7 @@ const char index_html[] = R"rawliteral(
   </style>
 </head>
 <body>
-  <h2>ESP-IDF Web Serial</h2>
+  <h2>ESP-WebSerial</h2>
   <div id="status" style="color:gray; font-size:0.8em">Connecting...</div>
   <div id="terminal"></div>
 
@@ -186,7 +186,7 @@ static void rx_task(void *arg) {
     if (rxBytes > 0) {
       data[rxBytes] = 0;
       send_ws_message((char *)data);
-      printf("Sent to WS: %s", data);
+      // printf("Sent to WS: %s", data);
     }
   }
   free(data);
